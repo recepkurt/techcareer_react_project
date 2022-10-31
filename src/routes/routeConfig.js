@@ -10,7 +10,7 @@ export const routeConfig = [
         element:<CustomerList/>
     },
     {
-        path:'/admin/CustomerDetail',
+        path:'/admin/CustomerDetail/:id',
         element:<CustomerDetail/>
     },
     {

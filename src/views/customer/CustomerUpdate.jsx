@@ -28,6 +28,9 @@ function CustomerUpdate() {
 
     networkService.update("customers", values,id)
     .then((res) => {
+      Modal.success({
+        content: 'Customer updated.'
+      })
       navigate('/admin/CustomerList');
     })
 
@@ -45,7 +48,7 @@ function CustomerUpdate() {
         name='id'
         rules={[{required: true, message: 'Please input customer id!'}]}
       >
-        <Input/>
+        <Input disabled={true}/>
       </Form.Item>
 
       <Form.Item
@@ -73,7 +76,7 @@ function CustomerUpdate() {
       </Form.Item>
 
       <Button type="primary" htmlType="submit">
-        Submit
+        Update
       </Button>
 
     </Form>

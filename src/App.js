@@ -20,8 +20,10 @@ function App() {
               defaultSelectedKeys={['1']}
             >
                 <Menu.Item key={1}><Link to='/admin/CustomerList'>Customer List</Link></Menu.Item>
+                {/*
                 <Menu.Item key={2}><Link to='/admin/CustomerDetail'>Customer Detail</Link></Menu.Item>
                 <Menu.Item key={3}><Link to='/admin/CustomerUpdate'>Customer Update</Link></Menu.Item>
+                */}
                 <Menu.Item key={4}><Link to='/admin/AddCustomer'>Add Customer</Link></Menu.Item>
             </Menu>
       </Header>

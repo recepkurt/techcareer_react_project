@@ -14,6 +14,7 @@ function CustomerList() {
 
   const [customers, setcustomers] = useState([]);
   const updateNavigate = useNavigate();
+  const detailNavigate = useNavigate();
 
   useEffect(() => {
     getCustomers();
@@ -62,11 +63,13 @@ const showDeleteConfirm = (id) => {
 
 
 const updateCustomer = (id)=> {
-
-
   updateNavigate('/admin/CustomerUpdate/' + id);
 }
 
+
+const getCustomerDetail = (id)=> {
+  detailNavigate('/admin/CustomerDetail/' + id);
+}
   const columns = [
     {
       title: 'Id',
@@ -87,7 +90,7 @@ const updateCustomer = (id)=> {
       title: 'Contact Title',
       dataIndex: 'contactTitle',
       sorter: (a, b) => a.contactTitle.localeCompare(b.contactTitle)
-    },
+    },    
     {
       title: 'DELETE',
       dataIndex: 'id',
@@ -96,7 +99,7 @@ const updateCustomer = (id)=> {
     {
       title: 'DETAIL',
       dataIndex: 'id',
-      render: () => <Button type="primary">Detail</Button>
+      render: (id) => <Button onClick={() => getCustomerDetail(id)} type="primary">Detail</Button>
     },
     {
       title: 'UPDATE',
